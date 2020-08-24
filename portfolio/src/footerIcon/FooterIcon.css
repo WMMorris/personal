@@ -1,0 +1,37 @@
+
+i{
+    font-size: 3rem;
+    color:  #212529;
+}
+i:hover{
+    color: rgb(58, 74, 112);
+}
+.icons{
+    text-align: center;
+}
+.git{
+    grid-column: 6/7;
+    grid-row: 1;
+}
+@media screen and (max-width: 600px) {
+
+    i {
+        
+        grid-column: 1/-1;
+        font-size: 1.5rem;
+    }
+    .face{
+        grid-column: 4/5;
+        grid-row: 1;
+    }
+    .twitter{
+        grid-column: 5/6;
+        grid-row: 1;
+    }
+
+    .git{
+        grid-column: 6/7;
+        grid-row: 1;
+    }
+
+}

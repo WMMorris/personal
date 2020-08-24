@@ -3,21 +3,22 @@ import React, { useState } from 'react'
 export const UserContext = React.createContext()
 
  const UserProvider = (props) => {
+     const initial = {navMenu : ''}
 
-  const [navMenu, setNavMenue] = useState('')
+  const [state, setState] = useState(initial)
 
   function handleNavMenu(e){
     if (e === '') {
-    setNavMenue('toggled')
+        setState({navMenu : 'toggled'})
         } else {
-    setNavMenue('')
+        setState({navMenu : ''})
         }
 }
 
   return (
     <UserContext.Provider
     value={{
-        ...navMenu,
+        ...state,
         handleNavMenu
       }}>
       { props.children }

@@ -1,6 +1,7 @@
 .footer{
     grid-column: 1/-1;
-    grid-row: 4;
+    grid-row: 3;
+    height: 15vh;
     padding: 3% 0;
     margin-top: .5rem;    
     text-align: center;    
@@ -8,19 +9,26 @@
     background-color: rgb(87, 87, 87); 
     color: wheat;
     font-size: 1.5rem;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: .25fr auto;
     font-family: 'Londrina Solid', cursive;
-    align-items: center;
-
+}
+.footer > p {
+    grid-column:  3/5;
+    grid-row: 2;
 }
 @media only screen and (min-width: 300px) and (max-width: 500px){
     .footer{
-        height: 10vh;
-        padding: 3vh 0; 
-        font-size: 1rem;      
+        
+        /* display: flex;
+        flex-direction: column; */
+        height: 12vh;
+        font-size: 1rem; 
+        margin: 0;     
     }
-    p{
+    .footer > p{
+        grid-column: 1/-1;
         font-size: 1rem;
     } 
  }

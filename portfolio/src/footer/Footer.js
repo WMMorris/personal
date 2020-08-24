@@ -1,10 +1,13 @@
 import React from 'react'
+
+import FooterIcons from '../footerIcon/FooterIcons';
 import './Footer.css'
 
 const Footer = () => {
     return (
-        <footer className = "footer">            
-            <p >&copy;2020 William Morris - Web Dev Student</p>
+        <footer className = "footer">  
+            <FooterIcons/>
+            <p >&copy;2020 Hilltop Coder</p>
         </footer>
     )
 }

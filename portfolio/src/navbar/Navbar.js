@@ -1,31 +1,33 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faBars , faTimes} from '@fortawesome/free-solid-svg-icons'
 import NavItem from './navItem/NavItem'
 import NavTitle from './navTitle/NavTitle'
+import{ UserContext} from '../context/UserProvider'
 import './Navbar.css'
 
 const Navbar = ()=> {    
-
+    const { navMenu, handleNavMenu } = useContext(UserContext)
     
-    const [navMenu, setNavMenue ] = useState('')   
+    // const [navMenu, setNavMenue ] = useState('')   
 
-    let handleNavMenu = (e) =>{
-        if (e === '') {
-        setNavMenue("toggled")
-            } else {
-        setNavMenue('')
-            }
-    }   
+    // let handleNavMenu = (e) =>{
+    //     if (e === '') {
+    //     setNavMenue("toggled")
+    //         } else {
+    //     setNavMenue('')
+    //         }
+    // }   
    
 
     return (
         <nav className='clear-fix' >
             <div  className={`navbar ${navMenu}`} >
-            <Link to="/"> <NavTitle text="Hill Top<coder/>"/> </Link>
+            <Link onClick={()=>handleNavMenu("toggled")} to="/"> <NavTitle text="Hill Top<coder/>"/> </Link>
                 <div className='right'>
-                    <Link to="/about"> <NavItem text='About'/> </Link>                               
+                    <Link onClick={()=>handleNavMenu("toggled")} to="/"> <NavItem text='Home'/> </Link>
+                    <Link onClick={()=>handleNavMenu("toggled")} to="/about"> <NavItem text='About'/> </Link>                               
                 </div>
                 <>
                     { navMenu === ''?
